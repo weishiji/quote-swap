@@ -1,5 +1,4 @@
 export * from './config';
-export * from './pattern';
 
 export const isType = (value: any) =>
   toString

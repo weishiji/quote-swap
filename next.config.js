@@ -2,9 +2,9 @@
 /** @type {import('next').NextConfig} */
 const nextTranslate = require('next-translate');
 module.exports = nextTranslate({
+  webpack5: false,
   reactStrictMode: false,
   publicRuntimeConfig: {
-    GOOGLE_RECAPTCHA_SITEKEY: process.env.GOOGLE_RECAPTCHA_SITEKEY,
-    BASE_SERVER_URL: process.env.BASE_SERVER_URL,
+    INFURA_KEY: process.env.INFURA_KEY,
   },
 });
