@@ -1,4 +1,4 @@
-import type { AppProps } from 'next/app';
+import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import { ChakraProvider } from '@chakra-ui/provider';
 import theme from '@/theme';
@@ -25,6 +25,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       </ChakraProvider>
     </>
   );
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  console.log(metric);
 }
 
 export default MyApp;
