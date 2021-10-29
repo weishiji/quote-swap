@@ -1,0 +1,24 @@
+{
+  "title": "Trade directly to Exchanges With Best-in-class Algos_",
+  "description": "The fragmented nature of the crypto markets with liquidity and assets scattered across CEXs, DEXs, and alternative trading venues. In addition, each platform features different parameters including fee tiers, APIs, price index, collateral requirements, or liquidation methodologies that create a high entry barrier for investors. CyberX has integrated its liquidity pool with the top 30 liquidity venues globally. With our infrastructure, clients can access aggregated liquidity, optimal pricing, multiple markets, diversified assets, and portfolio margins in one CyberX account. Our trading services are also designed to address the needs of different types of clients.",
+  "link_text": "Become a Client",
+  "highlights": {
+    "title": "Highlights",
+    "left_data": [
+      {
+        "title": "Low Latency DMA",
+        "desc": "Access global markets through one single account, with the most competitive trading fee."
+      },
+      {
+        "title": "Advanced Trading Algorithms",
+        "desc": "Our trading desk provides best-in-class trading algorithms including TWAP / VWAP / PEG 800 tokens with 1,400 trading. Using CyberX’s analysis on real-time market data and machine learning trained on historical data, our algorithm breaks down orders into smaller groups, which is optimal for helping clients to mask trading intentions, reduce trading costs, and minimize the impact of our client’s trades on the overall market."
+      }
+    ],
+    "right_data": {
+      "top": {
+        "title": "Trade With API",
+        "desc": "Aggregated under a single API (REST API / Websockets), you can conduct spot and derivatives market transactions across multiple exchanges. CyberX Prime also leverages our trading algorithm, which can support 24/7 automated order executions with fully configurable parameters and indicators."
+      }
+    }
+  }
+}

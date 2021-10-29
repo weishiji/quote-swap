@@ -1,0 +1,42 @@
+import React from 'react';
+import Document, {
+  DocumentProps,
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from 'next/document';
+
+type IDocuementProps = DocumentProps;
+
+class CustomDocument extends Document<IDocuementProps> {
+  static async getInitialProps(ctx: DocumentContext) {
+    const originalRenderPage = ctx.renderPage;
+
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App) => App,
+        enhanceComponent: (Component) => Component,
+      });
+
+    const initialProps = await Document.getInitialProps(ctx);
+    return {
+      ...initialProps,
+    };
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default CustomDocument;

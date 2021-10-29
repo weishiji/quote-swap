@@ -1,0 +1,207 @@
+{
+  "title": "Connect Assets_",
+  "description": [
+    "Founded in 2016, CyberX is a prime broker in crypto space, dedicated to meeting the diversified demands of clients in thiFounded in 2016, Cipher Group is a technology firm that specializes in crypto finance. Developing institutional-grade infrastructures, Cipher Group serves professional investors that utilize the latest advancements in blockchain, mathematical modelling, deep learning and financial engineering to optimize their trades.",
+    "In 2018, Cipher Group launched CyberX, a prime brokerage platform that offers one-stop bundled solutions to hedge funds, family offices, high-net-worth individuals, exchanges, token issuers, miners, and crypto lenders."
+  ],
+  "link_text": "Become a Client",
+  "metrics": [
+    {
+      "label": "Total Trading Vol",
+      "value": "$360m"
+    },
+    {
+      "label": "Total Clients",
+      "value": "200+"
+    }
+  ],
+  "our_team": {
+    "title": "Our Team",
+    "desc": "The CyberX team consists of veterans from Wall Street banks, advisory firms, and tech leaders who are on a mission to provide clients with world-class secure and reliable services that are compliant with global regulations.",
+    "link_text": "Find out more"
+  },
+  "global_footprint": {
+    "title": "Global Footprint",
+    "city": [
+      "Hong Kong",
+      "Seoul",
+      "New York",
+      "San Francisco",
+      "Ottawa"
+    ]
+  },
+  "teams": [
+    {
+      "name": "Hao Wang",
+      "cfa": "",
+      "introduction": "10 Year+ Crypto / Blockchain / Quant Trading",
+      "data": [
+        {
+          "title": "Bihang.com",
+          "desc": "Co-founder"
+        },
+        {
+          "title": "Goldman Sachs, Tokyo, FICC",
+          "desc": "Quant"
+        },
+        {
+          "title": "University of Tokyo",
+          "desc": "Mathematic"
+        }
+      ]
+    },
+    {
+      "name": "Zack Fan",
+      "cfa": "",
+      "introduction": "10 Year+ Structure Product / Institutional Sales",
+      "data": [
+        {
+          "title": "UBS, FICC",
+          "desc": "Associate Director"
+        },
+        {
+          "title": "Citibank, Capital Market",
+          "desc": "Vice President"
+        },
+        {
+          "title": "U.C.Berkeley",
+          "desc": "Financial Engineering"
+        }
+      ]
+    },
+    {
+      "name": "CH Tang",
+      "cfa": "CFA",
+      "introduction": "10 Year+ Quant Trading",
+      "data": [
+        {
+          "title": "GSA Capital Partners",
+          "desc": "Sr. Researcher"
+        },
+        {
+          "title": "JT Capital Management",
+          "desc": "Sr. Researcher"
+        },
+        {
+          "title": "BlackRock",
+          "desc": "Manager"
+        }
+      ]
+    },
+    {
+      "name": "Kevin Xu",
+      "cfa": "CFA",
+      "introduction": "10 Year+ Algo Trading / Quant Trading",
+      "data": [
+        {
+          "title": "Merrill Lynch",
+          "desc": "Head of Quantitative Strategies / Global Markets ED"
+        },
+        {
+          "title": "AQR Capital",
+          "desc": "Quant Analyst"
+        },
+        {
+          "title": "Columbia University",
+          "desc": "Financial Engineering"
+        },
+        {
+          "title": "Tsinghua University",
+          "desc": "Tsinghua University"
+        }
+      ]
+    },
+    {
+      "name": "Yue Wei",
+      "cfa": "CFA",
+      "introduction": "10 Year+ Quant Trading",
+      "data": [
+        {
+          "title": "China based Quant fund",
+          "desc": "General Manager"
+        },
+        {
+          "title": "Large Mutual Fund",
+          "desc": "Head of Quant Trading"
+        },
+        {
+          "title": "Citadel",
+          "desc": "Quant Analyst"
+        },
+        {
+          "title": "University of Wisconsin",
+          "desc": "PhD,Statistic"
+        },
+        {
+          "title": "Peking University",
+          "desc": "Mathematic"
+        }
+      ]
+    },
+    {
+      "name": "Shuang Li",
+      "cfa": "",
+      "introduction": "10 Year+ Product Management / Structured Products",
+      "data": [
+        {
+          "title": "MSCI Barra/Riskmetrics",
+          "desc": "Greater China Regional Product Manager, Executive Director"
+        },
+        {
+          "title": "HSBC Global Markets",
+          "desc": "FI Structuring, Associate"
+        },
+        {
+          "title": "Oriental Patron Investment",
+          "desc": "Private Equity, Associate"
+        },
+        {
+          "title": "Oxford University",
+          "desc": "MSc. in Applied Mathematics"
+        },
+        {
+          "title": "London School of Economics",
+          "desc": "BSc. in Economics"
+        }
+      ]
+    },
+    {
+      "name": "Shawn Liu",
+      "cfa": "CFA",
+      "introduction": "10 Years+ Algo Trading / Market Making",
+      "data": [
+        {
+          "title": "Morgan Stanley",
+          "desc": "Asia Head Of FX Market Making Technology"
+        },
+        {
+          "title": "Goldman Sachs",
+          "desc": "Algorithmic Trading and Realtime Risk Management"
+        },
+        {
+          "title": "Shanghai Jiaotong University",
+          "desc": "Computer Science"
+        }
+      ]
+    },
+    {
+      "name": "Harry Wong",
+      "cfa": "CFA",
+      "introduction": "10 Year+ Advisory / Internet / Crypto",
+      "data": [
+        {
+          "title": "BitOcean Global",
+          "desc": "Co-founder & COO"
+        },
+        {
+          "title": "Deloitte",
+          "desc": "Corporate Finance Advisor, Senior Associate"
+        },
+        {
+          "title": "University of British Columbia",
+          "desc": "Accounting"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "common": "Common",
+  "investment_organization": "Investment Institution",
+  "quantitative_trade": "Quantitative Trading Institution",
+  "exchange": "Exchange",
+  "otc_service": "OTC Service",
+  "lending_institution": "Lending Institution",
+  "wallet": "Wallet",
+  "mining_pool": "Mining Pool",
+  "trader": "Other",
+  "contact_us": "Contact Us",
+  "our_client": "Our Clients",
+  "about_us": "About Us",
+  "institution_type": "Institution Type",
+  "institution_name": "Institution Name",
+  "last_name": "Last Name",
+  "first_name": "First Name",
+  "required": "Required",
+  "email_placeholder": "Please Type Email",
+  "email": "E-mail",
+  "btn_submit": "Submit",
+  "policy_html": "<0>By signing up, I confirm that I have read and I agree to the <1>Terms of Use</1> & <2>Privacy Policy</2></0>",
+  "home_about_des": "Founded in 2016, CyberX is a prime broker in crypto space, dedicated to meeting the diversified demands of clients in this fast evolving industry by offering integrated financial solutions for trading, financing, liquidity, risk and treasury management across global trading venues and multiple assets. CyberX is partnered with more than 200 international institutional investors including leading hedge funds, mining pools, wallets, miners and high-net-worth individuals.",
+  "btn_find_more": "Find out more",
+  "total_trading_vol": "Total Trading Vol",
+  "total_clients": "Total Clients",
+  "cobo_cto_say": "“CyberX has been a trusted crypto trading platform that we continue to rely on. They’re a team of traditional finance veterans whose expertise is bar-none the best in Asia for structuring our client’s portfolio of crypto assets and help them to generate a passive income.”",
+  "footer": {
+    "city": [
+      "Hong Kong",
+      "Seoul",
+      "New York",
+      "San Francisco",
+      "Ottawa"
+    ],
+    "copyright": "© 2021 CyberX. All rights reserved.",
+    "disclaimer": {
+      "title": "DISCLAIMER",
+      "text": [
+        "This website is intended for institutional investors only. Neither FalconX Limited nor Solios, Inc. (separately and collectively “FalconX”) service retail counterparties, and the information on this website is NOT intended for retail investors. The material published on this website is for informational purposes only. Nothing on this website shall constitute investment, tax, legal or other advice by FalconX Limited, Solios, Inc., or any other entity or person. Solios, Inc. is registered as a federal money services business with FinCEN. Neither FalconX Limited nor Solios Inc are registered with the Securities & Exchange Commission or the Financial Industry Regulatory Authority.",
+        "FalconX Limited with offices at Level G, (Office 1/1191), Quantum House, 75, Abate Rigord Street, Ta’ Xbiex XBX 1120, Malta is a registered Class 3 VFA service provider under the Virtual Financial Assets Act of 2018. FalconX Limited is licensed to provide the following services to Experienced Investors, Execution of orders on the behalf of other persons, Custodian or Nominee Services, and Dealing on own account.",
+        "FalconX Limited's complaint policy can be viewed by sending a request to complaints@falconx.io"
+      ]
+    },
+    "about": "About",
+    "company": "Company",
+    "team": "Team",
+    "services": "Services",
+    "block_trade": "Block Trade",
+    "direct_market_access": "Direct Market Access",
+    "algo_trading": "Algo Trading",
+    "portfolio_management": "Portfolio Management",
+    "api": "API",
+    "news": "News",
+    "newsroom": "Newsroom",
+    "twitter": "Twitter",
+    "medium": "Medium",
+    "legal": "Legal",
+    "compliance": "Compliance",
+    "terms_of_use": "Terms of use",
+    "privacy_policy": "Privacy policy"
+  }
+}

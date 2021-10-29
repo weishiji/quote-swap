@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-vars": 0,
+    "quotes": 0,
+    "@typescript-eslint/quotes": [2, "single"],
+    "prettier/prettier": 2,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "import/no-anonymous-default-export": [2, {
+      "allowArray": false,
+      "allowArrowFunction": false,
+      "allowAnonymousClass": false,
+      "allowAnonymousFunction": false,
+      "allowCallExpression": true,
+      "allowLiteral": false,
+      "allowObject": true
+    }]
+  }
+}

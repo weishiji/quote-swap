@@ -1,0 +1,24 @@
+{
+  "title": "Better insights, better decisions_",
+  "description": "View and manage your entire digital asset portfolio across top exchanges, blockchain wallets, and service providers—all in one place.",
+  "link_text": "Become a Client",
+  "highlights": {
+    "title": "Highlights",
+    "left_data": [
+      {
+        "title": "A robust reporting experience",
+        "desc": "BitGo Portfolio allows users to produce a wide variety of comprehensive reports organized by portfolio, holdings, and line items. Filter by transaction type, asset, account, and key dates to create more focus. Generate on-demand reports to support a range of workflows—from capturing daily holding snapshots to tracking expenses related to blockchain fees, exchange trade fees, and more."
+      },
+      {
+        "title": "A comprehensive view",
+        "desc": "Track historical performance, current positions, and asset allocation. Get news and insights relevant to your holdings in real time."
+      }
+    ],
+    "right_data": {
+      "top": {
+        "title": "Digital asset accounting made simple",
+        "desc": "BitGo Portfolio is designed to make the process of transaction resolution—defining the type and cost basis of individual transactions—more accurate, efficient, and scalable. The system’s Auto Resolution, Smart Resolution, and Manual Resolution capabilities work in conjunction to provide clients with more control over internal accounting processes and the ability to construct either a completely automated or more manual workflow."
+      }
+    }
+  }
+}

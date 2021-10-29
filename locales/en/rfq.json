@@ -1,0 +1,52 @@
+{
+  "title": "Block Liquidity Access_",
+  "description": "Block Liquidity Access minimizes the market impact and execution cost for both buyers and sellers. Our OTC desk offers clients with bespoke high-touch services through voice trading and messengers. Clients can receive quotes 24/7 for large block trade orders for major cryptocurrencies, fiat on-ramps and off-ramps, and derivatives that use a credit line and flexible settlement schedules.",
+  "link_text": "Become a Client",
+  "highlights": {
+    "title": "Highlights",
+    "left_data": [
+      {
+        "title": "Instantly trade from small to multi-million dollar blocks",
+        "desc": "We have traded tens of billions in cryptocurrency since 2015, ranging from small algo trades to multi-million dollar blocks."
+      },
+      {
+        "title": "24/7 Liquidity, Streaming prices, zero fees",
+        "desc": "The OTC desk provides global coverage in the Americas, Europe and Asia-Pacific and is open 24/7, with the exception of major holidays."
+      },
+      {
+        "title": "Post-trade settlement",
+        "desc": "A secure, stable, and seamless settlement workflow. We provide the post-trade, weekend, and flexible settlement solutions institutional traders expect."
+      }
+    ],
+    "right_data": {
+      "top": {
+        "title": "Supported Assets",
+        "desc": "In addition to OTC bitcoin trading, the Kraken OTC desk can support all fiat currencies and digital assets currencies listed on the Kraken Exchange:"
+      },
+      "bottom": [
+        {
+          "title": "Fiat Currencies",
+          "list": [
+            "US Dollars (USD)",
+            "Euros (EUR)",
+            "Canadian Dollars (CAD)",
+            "Japanese Yen (JPY)",
+            "British pounds (GBP)",
+            "Australian Dollars (AUD)"
+          ]
+        },
+        {
+          "title": "Digital Assets",
+          "list": [
+            "Bitcoin (BTC)",
+            "Ethereum (ETH)",
+            "Tether (USDT)",
+            "Monero (XMR)",
+            "Ethereum Classic (ETC)",
+            "And 19 more..."
+          ]
+        }
+      ]
+    }
+  }
+}
