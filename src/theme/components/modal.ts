@@ -28,26 +28,27 @@ const baseStyleDialog: SystemStyleFunction = (props) => {
   const { scrollBehavior } = props;
 
   return {
-    borderRadius: 'md',
+    borderRadius: 'sm',
     bg: mode('white', 'gray.700')(props),
     color: 'inherit',
     my: '3.75rem',
     zIndex: 'modal',
     maxH: scrollBehavior === 'inside' ? 'calc(100% - 7.5rem)' : undefined,
-    boxShadow: mode('lg', 'dark-lg')(props),
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
+    py: 2,
   };
 };
 
 const baseStyleHeader: SystemStyleObject = {
   px: 6,
-  py: 4,
-  fontSize: 'xl',
+  py: 3,
+  fontSize: 'md',
   fontWeight: 'semibold',
 };
 
 const baseStyleCloseButton: SystemStyleObject = {
   position: 'absolute',
-  top: 2,
+  top: 3,
   insetEnd: 3,
 };
 
@@ -63,7 +64,7 @@ const baseStyleBody: SystemStyleFunction = (props) => {
 
 const baseStyleFooter: SystemStyleObject = {
   px: 6,
-  py: 4,
+  py: 3,
 };
 
 const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
@@ -76,10 +77,6 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
   footer: baseStyleFooter,
 });
 
-/**
- * Since the `maxWidth` prop references theme.sizes internally,
- * we can leverage that to size our modals.
- */
 function getSize(value: string): PartsStyleObject<typeof parts> {
   if (value === 'full') {
     return {

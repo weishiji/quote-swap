@@ -98,9 +98,11 @@ const WalletModal = () => {
       activate(connector, undefined, true)
         .then(async () => {
           const walletAddress = await connector.getAccount();
+          console.log(walletAddress);
           logMonitoringEvent({ walletAddress });
         })
         .catch((error) => {
+          console.log(error);
           if (error instanceof UnsupportedChainIdError) {
             activate(connector); // a little janky...can't use setError because the connector isn't set
           } else {
@@ -176,7 +178,6 @@ const WalletModal = () => {
           return null;
         }
       }
-
       // return rest of options
       return (
         !isMobile &&
@@ -201,13 +202,15 @@ const WalletModal = () => {
     });
   };
 
+  console.log(walletModalOpen);
+
   return (
     <Modal isOpen={walletModalOpen} onClose={toggleWalletModal} isCentered>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent borderRadius='md'>
         <ModalHeader>Connect a Wallet</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb={4}>
+        <ModalCloseButton right={6} top={5} />
+        <ModalBody p={6}>
           <VStack spacing={4}>{getOptions()}</VStack>
         </ModalBody>
       </ModalContent>

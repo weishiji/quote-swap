@@ -1,13 +1,9 @@
 import { mode, transparentize } from '@chakra-ui/theme-tools';
-import type {
-  SystemStyleObject,
-  SystemStyleFunction,
-} from '@chakra-ui/theme-tools';
+import type { SystemStyleObject, SystemStyleFunction } from '@chakra-ui/theme-tools';
 
 const baseStyle: SystemStyleObject = {
-  lineHeight: '1.2',
   borderRadius: 'sm',
-  fontWeight: 'semibold',
+  fontWeight: 'normal',
   transitionProperty: 'common',
   transitionDuration: 'normal',
   _focus: {
@@ -28,75 +24,42 @@ const baseStyle: SystemStyleObject = {
 const variantGhost: SystemStyleFunction = (props) => {
   const { colorScheme: c, theme } = props;
 
-  const color = mode(`${c}.500`, `${c}.500`)(props);
-  const darkHoverBg = transparentize(`${c}.400`, 0.12)(theme);
-  const darkActiveBg = transparentize(`${c}.600`, 0.24)(theme);
+  const hoverBg = transparentize(`${c}.500`, 0.12)(theme);
+  const activeBg = transparentize(`${c}.500`, 0.24)(theme);
 
   return {
-    color,
+    color: mode(`${c}.500`, 'white')(props),
     bg: 'transparent',
     _hover: {
-      bg: mode(darkHoverBg, darkHoverBg)(props),
+      bg: hoverBg,
     },
     _active: {
-      bg: mode(darkHoverBg, darkActiveBg)(props),
+      bg: activeBg,
     },
   };
 };
 
 const variantOutline: SystemStyleFunction = (props) => {
+  const { colorScheme: c, theme } = props;
   return {
     border: '1px solid',
-    borderColor: 'currentColor',
+    borderColor: transparentize(`${c}.500`, 0.12)(theme),
     ...variantGhost(props),
   };
 };
 
-type AccessibleColor = {
-  bg?: string
-  color?: string
-  hoverBg?: string
-  activeBg?: string
-}
-
-/** Accessible color overrides for less accessible colors. */
-const accessibleColorMap: { [key: string]: AccessibleColor } = {
-  yellow: {
-    bg: 'yellow.400',
-    color: 'black',
-    hoverBg: 'yellow.500',
-    activeBg: 'yellow.600',
-  },
-  cyan: {
-    bg: 'cyan.400',
-    color: 'black',
-    hoverBg: 'cyan.500',
-    activeBg: 'cyan.600',
-  },
-};
-
 const variantSolid: SystemStyleFunction = (props) => {
   const { colorScheme: c } = props;
-
-  const {
-    bg = `${c}.500`,
-    color = 'white',
-    hoverBg = `${c}.400`,
-    activeBg = `${c}.600`,
-  } = accessibleColorMap[c] ?? {};
-
-  const background = mode(bg, bg)(props);
-
   return {
-    bg: background,
-    color: mode(color, color)(props),
+    bg: `${c}.500`,
+    color: 'white',
     _hover: {
-      bg: mode(hoverBg, hoverBg)(props),
+      bg: `${c}.400`,
       _disabled: {
-        bg: background,
+        bg: `${c}.500`,
       },
     },
-    _active: { bg: mode(activeBg, activeBg)(props) },
+    _active: { bg: `${c}.600` },
   };
 };
 
@@ -106,16 +69,17 @@ const variantLink: SystemStyleFunction = (props) => {
     padding: 0,
     height: 'auto',
     lineHeight: 'normal',
-    verticalAlign: 'baseline',
-    color: mode(`${c}.500`, `${c}.500`)(props),
+    verticalAlign: 'middle',
+    color: `${c}.500`,
     _hover: {
+      color: `${c}.400`,
       textDecoration: 'none',
       _disabled: {
         textDecoration: 'none',
       },
     },
     _active: {
-      color: mode(`${c}.600`, `${c}.600`)(props),
+      color: `${c}.600`,
     },
   };
 };
@@ -141,26 +105,30 @@ const sizes: Record<string, SystemStyleObject> = {
   lg: {
     h: 12,
     minW: 12,
-    fontSize: 'lg',
+    fontSize: '2xl',
     px: 6,
+    lineHeight: 8,
   },
   md: {
     h: 10,
     minW: 10,
     fontSize: 'md',
     px: 4,
+    lineHeight: 6,
   },
   sm: {
     h: 8,
     minW: 8,
     fontSize: 'sm',
     px: 3,
+    lineHeight: 5,
   },
   xs: {
     h: 6,
     minW: 6,
     fontSize: 'xs',
     px: 2,
+    lineHeight: 4,
   },
 };
 

@@ -82,10 +82,10 @@ const variantOutline: PartsStyleFunction<typeof parts> = (props) => {
   return {
     field: {
       border: '1px solid',
-      borderColor: 'inherit',
+      borderColor: mode('gray.500', '#343A50')(props),
       bg: 'inherit',
       _hover: {
-        borderColor: mode('gray.300', 'whiteAlpha.400')(props),
+        borderColor: mode('gray.500', '#343A50')(props),
       },
       _readOnly: {
         boxShadow: 'none !important',

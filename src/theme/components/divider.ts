@@ -1,29 +1,29 @@
-import type { SystemStyleObject } from '@chakra-ui/theme-tools';
+import type { SystemStyleObject } from "@chakra-ui/theme-tools"
 
 const baseStyle: SystemStyleObject = {
   opacity: 0.6,
-  borderColor: 'inherit',
-};
+  borderColor: "inherit",
+}
 
 const variantSolid: SystemStyleObject = {
-  borderStyle: 'solid',
-};
+  borderStyle: "solid",
+}
 
 const variantDashed: SystemStyleObject = {
-  borderStyle: 'dashed',
-};
+  borderStyle: "dashed",
+}
 
 const variants = {
   solid: variantSolid,
   dashed: variantDashed,
-};
+}
 
 const defaultProps = {
-  variant: 'solid',
-};
+  variant: "solid",
+}
 
 export default {
   baseStyle,
   variants,
   defaultProps,
-};
+}

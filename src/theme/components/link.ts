@@ -12,7 +12,7 @@ const baseStyle: SystemStyleObject = {
     textDecoration: 'none',
   },
   _focus: {
-    boxShadow: 'outline',
+    boxShadow: 'none',
   },
 };
 
