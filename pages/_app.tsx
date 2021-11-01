@@ -1,8 +1,10 @@
-import type { AppProps, NextWebVitalsMetric } from 'next/app';
+import type { AppProps, NextWebVitalsMetric, AppContext } from 'next/app';
 import Head from 'next/head';
 import { ChakraProvider } from '@chakra-ui/provider';
 import theme from '@/theme';
 import dynamic from 'next/dynamic';
+
+import { wrapper } from '@/store';
 
 const Web3ReactManager = dynamic(() => import('../src/components/Web3ReactManager'), {
   ssr: false,
@@ -27,8 +29,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
+MyApp.getInitialProps = (context: AppContext) =>
+  wrapper.getInitialAppProps((store) => async ({ Component, ctx }) => {
+    return {
+      pageProps: {
+        ...(Component.getInitialProps ? await Component.getInitialProps({ ...ctx, store }) : {}),
+      },
+    };
+  })(context);
+
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric);
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
