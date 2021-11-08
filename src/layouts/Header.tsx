@@ -15,9 +15,8 @@ const Header = () => {
   const contextNetwork = useWeb3React(NetworkContextName);
   const toggleWalletModal = useWalletModalToggle();
 
-  console.log(contextNetwork);
   const { ENSName } = useENSName(account ?? undefined);
-  console.log(ENSName);
+  console.log({ ENSName });
   return (
     <>
       <Box as='header' py={4}>

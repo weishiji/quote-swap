@@ -51,7 +51,7 @@ export interface IFetchingMulticallListenersPayload {
 
 export interface IUpdateMulticallListenersPayload {
   chainId: number;
-  calls: Call[];
+  blockNumber: number;
   results: {
     [callKey: string]: string | null;
   };

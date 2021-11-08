@@ -27,6 +27,10 @@ const NETWORK_URLS: { [key in SupportedChainId]: string } = {
   [SupportedChainId.OPTIMISTIC_KOVAN]: `https://optimism-kovan.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.ARBITRUM_ONE]: `https://arbitrum-mainnet.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.ARBITRUM_RINKEBY]: `https://arbitrum-rinkeby.infura.io/v3/${INFURA_KEY}`,
+  [SupportedChainId.SMART_CHAIN]: 'https://bsc-dataseed.binance.org/',
+  [SupportedChainId.SMART_CHAIN_TESTNET]: 'https://data-seed-prebsc-1-s1.binance.org:8545',
+  [SupportedChainId.HECO_MAINNET]: 'https://http-mainnet.hecochain.com',
+  [SupportedChainId.HECO_TESTNET]: 'https://http-testnet.hecochain.com',
 };
 
 export const network = new NetworkConnector({

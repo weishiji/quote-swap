@@ -39,7 +39,17 @@ const WALLET_VIEWS = {
   LEGAL: 'legal',
 };
 
-const WalletModal = () => {
+interface IWalletModalProps {
+  pendingTransactions: string[]; // hashes of pending
+  confirmedTransactions: string[]; // hashes of confirmed
+  ENSName?: string;
+}
+
+const WalletModal = ({
+  pendingTransactions,
+  confirmedTransactions,
+  ENSName,
+}: IWalletModalProps) => {
   const { active, account, connector, activate, error } = useWeb3React();
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT);
   const previousWalletView = usePrevious(walletView);
@@ -210,6 +220,7 @@ const WalletModal = () => {
   };
 
   const getModalContent = () => {
+    console.log(walletView === WALLET_VIEWS.LEGAL);
     if (account && walletView === WALLET_VIEWS.ACCOUNT) {
       return (
         <>
