@@ -12,7 +12,7 @@ const theme = {
   styles,
   config: {
     useSystemColorMode: false,
-    initialColorMode: 'dark',
+    initialColorMode: 'light',
     cssVarPrefix: 'chakra',
   },
 };

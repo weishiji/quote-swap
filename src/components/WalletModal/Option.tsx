@@ -1,10 +1,20 @@
 import { ReactNode } from 'react';
-import Image, { ImageProps } from 'next/image';
-import { Button, Box, Flex, Text, HStack } from '@chakra-ui/react';
+import Image from 'next/image';
+import {
+  Button,
+  Box,
+  Flex,
+  Text,
+  HStack,
+  useColorModeValue,
+  useColorMode,
+  VStack,
+} from '@chakra-ui/react';
 import ExternalLink from '../ExternalLink';
 import styled from '@emotion/styled';
 
 const OptionCard = styled(Flex)``;
+
 const GreenCircle = styled(Box)`
   width: 8px;
   height: 8px;
@@ -18,7 +28,7 @@ interface IOptionProps {
   color: string;
   header: ReactNode;
   subHeader: ReactNode;
-  icon: ImageProps;
+  icon: string;
   active?: boolean;
   id: string;
 }
@@ -34,6 +44,10 @@ const Option = ({
   active = false,
   id,
 }: IOptionProps) => {
+  const { colorMode } = useColorMode();
+  const hoverBgColor = useColorModeValue('blackAlpha.500', 'gray.500');
+  const clickableBgColor = useColorModeValue('blackAlpha.400', 'gray.400');
+  const textColor = useColorModeValue('black', 'white');
   const content = (
     <OptionCard
       as={Button}
@@ -43,19 +57,38 @@ const Option = ({
       borderRadius='md'
       width='full'
       size='lg'
-      variant='outline'
-      colorScheme={clickable && !active ? 'blue' : 'gray'}
+      minHeight='48px'
+      height='auto'
+      lineHeight='1'
+      py={4}
+      colorScheme={colorMode === 'dark' ? 'gray' : 'blackAlpha'}
       onClick={onClick}
+      cursor={clickable && !active ? 'pointer' : 'default'}
+      _hover={{
+        bgColor: clickable && !active ? clickableBgColor : hoverBgColor,
+      }}
     >
-      <HStack spacing={2} as={Flex} fontSize='md'>
-        {active && <GreenCircle bgColor='green.500' />}
-        {header && <Text color={color}>{header}</Text>}
-      </HStack>
-      <Image {...icon} alt='Icon' width={24} height={24} />
+      <VStack spacing={2.5} alignItems='flex-start'>
+        <HStack spacing={2} as={Flex} fontSize='md'>
+          {active && <GreenCircle bgColor='green.500' />}
+          {header && <Text color={color === 'blue' ? 'blue.500' : textColor}>{header}</Text>}
+        </HStack>
+        {subHeader && (
+          <Text fontSize='xs' color={color === 'blue' ? 'blue.500' : textColor}>
+            {subHeader}
+          </Text>
+        )}
+      </VStack>
+
+      <Image src={icon} alt='Icon' width={24} height={24} />
     </OptionCard>
   );
   if (link) {
-    return <ExternalLink href={link}>{content}</ExternalLink>;
+    return (
+      <ExternalLink w='full' href={link}>
+        {content}
+      </ExternalLink>
+    );
   }
   return content;
 };

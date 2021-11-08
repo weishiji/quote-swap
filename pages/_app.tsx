@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 
 import { wrapper } from '@/store';
 
-const Web3ReactManager = dynamic(() => import('../src/components/Web3ReactManager'), {
+const DefaultLayout = dynamic(() => import('../src/layouts'), {
   ssr: false,
 });
 
@@ -21,9 +21,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel='shortcut icon' type='image/x-icon' href='/static/images/favicon.ico' />
       </Head>
       <ChakraProvider theme={theme}>
-        <Web3ReactManager>
+        <DefaultLayout>
           <Component {...pageProps}></Component>
-        </Web3ReactManager>
+        </DefaultLayout>
       </ChakraProvider>
     </>
   );

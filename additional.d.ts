@@ -1,3 +1,5 @@
+/// <reference types="next-images" />
+
 interface Window {
   ethereum?: {
     isMetaMask?: true;

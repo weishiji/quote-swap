@@ -12,7 +12,9 @@ import {
   ModalBody,
   ModalCloseButton,
   VStack,
+  IconButton,
 } from '@chakra-ui/react';
+import { FaChevronLeft } from 'react-icons/fa';
 
 import MetamaskIcon from '@/assets/images/metamask.png';
 import { ApplicationModal } from '@/actions/application';
@@ -23,8 +25,11 @@ import { SUPPORTED_WALLETS } from '@/constants/wallet';
 import { OVERLAY_READY } from '@/connectors/Fortmatic';
 import { fortmatic, injected, portis } from '@/connectors';
 import { isMobile } from '@/utils/userAgent';
+import notification from '@/utils/notification';
+import AccountDetails from '@/components/AccountDetails';
 
 import Option from './Option';
+import PendingView from './PendingView';
 
 const WALLET_VIEWS = {
   OPTIONS: 'options',
@@ -98,11 +103,13 @@ const WalletModal = () => {
       activate(connector, undefined, true)
         .then(async () => {
           const walletAddress = await connector.getAccount();
-          console.log(walletAddress);
           logMonitoringEvent({ walletAddress });
         })
         .catch((error) => {
-          console.log(error);
+          notification.error({
+            title: 'Error',
+            description: error.message,
+          });
           if (error instanceof UnsupportedChainIdError) {
             activate(connector); // a little janky...can't use setError because the connector isn't set
           } else {
@@ -142,7 +149,7 @@ const WalletModal = () => {
               link={option.href}
               header={option.name}
               subHeader={null}
-              icon={option.icon}
+              icon={option.iconURL}
             />
           );
         }
@@ -195,24 +202,67 @@ const WalletModal = () => {
             link={option.href}
             header={option.name}
             subHeader={null}
-            icon={option.icon}
+            icon={option.iconURL}
           />
         )
       );
     });
   };
 
-  console.log(walletModalOpen);
+  const getModalContent = () => {
+    if (account && walletView === WALLET_VIEWS.ACCOUNT) {
+      return (
+        <>
+          <ModalHeader>Account</ModalHeader>
+          <ModalCloseButton right={5} top={5} />
+          <ModalBody pb={4}>
+            <AccountDetails openOptions={() => setWalletView(WALLET_VIEWS.OPTIONS)} />
+          </ModalBody>
+        </>
+      );
+    }
+    if (walletView === WALLET_VIEWS.PENDING) {
+      return (
+        <>
+          <ModalHeader>
+            <IconButton
+              aria-label='Set Pending Error'
+              icon={<FaChevronLeft />}
+              onClick={() => {
+                setPendingError(false);
+                setWalletView(WALLET_VIEWS.ACCOUNT);
+              }}
+              variant='ghost'
+            />
+          </ModalHeader>
+          <ModalCloseButton right={5} top={5} />
+          <ModalBody pb={4}>
+            <PendingView
+              connector={pendingWallet}
+              error={pendingError}
+              setPendingError={setPendingError}
+              tryActivation={tryActivation}
+            />
+          </ModalBody>
+        </>
+      );
+    }
+    return (
+      <>
+        <ModalHeader>Connect a Wallet</ModalHeader>
+        <ModalCloseButton right={5} top={5} />
+        <ModalBody pb={4}>
+          <VStack spacing={4}>{getOptions()}</VStack>
+        </ModalBody>
+      </>
+    );
+  };
 
   return (
     <Modal isOpen={walletModalOpen} onClose={toggleWalletModal} isCentered>
       <ModalOverlay />
-      <ModalContent borderRadius='md'>
-        <ModalHeader>Connect a Wallet</ModalHeader>
-        <ModalCloseButton right={6} top={5} />
-        <ModalBody p={6}>
-          <VStack spacing={4}>{getOptions()}</VStack>
-        </ModalBody>
+      <ModalContent borderRadius='md' w={{ base: '85%', sm: 'md' }} my={4}>
+        {getModalContent()}
       </ModalContent>
     </Modal>
   );

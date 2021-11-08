@@ -72,7 +72,6 @@ export const useEagerConnect = () => {
  */
 export function useInactiveListener(suppress = false) {
   const { active, error, activate } = useWeb3React();
-
   useEffect(() => {
     const { ethereum } = window;
 

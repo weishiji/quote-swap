@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core';
 import getLibrary from '@/utils/getLibrary';
 import { NetworkContextName } from '@/constants/misc';
-import WalletModal from '@/components/WalletModal';
 
 import Web3ReactManager from './Manager';
 
@@ -13,7 +12,6 @@ const Web3Provider: FC = ({ children }) => {
     <Web3ReactProvider getLibrary={getLibrary}>
       <Web3ProviderNetwork getLibrary={getLibrary}>
         <Web3ReactManager>{children}</Web3ReactManager>
-        <WalletModal />
       </Web3ProviderNetwork>
     </Web3ReactProvider>
   );

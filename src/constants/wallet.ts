@@ -1,4 +1,3 @@
-import { ImageProps } from 'next/image';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 
 import INJECTED_ICON_URL from '@/assets/images/arrow-right.svg';
@@ -9,11 +8,10 @@ import PORTIS_ICON_URL from '@/assets/images/portisIcon.png';
 import WALLETCONNECT_ICON_URL from '@/assets/images/walletConnectIcon.svg';
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '@/connectors';
-
 interface WalletInfo {
   connector?: AbstractConnector;
   name: string;
-  icon: ImageProps;
+  iconURL: string;
   description: string;
   href: string | null;
   color: string;
@@ -26,7 +24,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   INJECTED: {
     connector: injected,
     name: 'Injected',
-    icon: INJECTED_ICON_URL,
+    iconURL: INJECTED_ICON_URL,
     description: 'Injected web3 provider.',
     href: null,
     color: '#010101',
@@ -35,7 +33,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   METAMASK: {
     connector: injected,
     name: 'MetaMask',
-    icon: METAMASK_ICON_URL,
+    iconURL: METAMASK_ICON_URL,
     description: 'Easy-to-use browser extension.',
     href: null,
     color: '#E8831D',
@@ -43,7 +41,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   WALLET_CONNECT: {
     connector: walletconnect,
     name: 'WalletConnect',
-    icon: WALLETCONNECT_ICON_URL,
+    iconURL: WALLETCONNECT_ICON_URL,
     description: 'Connect to Trust Wallet, Rainbow Wallet and more...',
     href: null,
     color: '#4196FC',
@@ -52,14 +50,14 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   WALLET_LINK: {
     connector: walletlink,
     name: 'Coinbase Wallet',
-    icon: COINBASE_ICON_URL,
+    iconURL: COINBASE_ICON_URL,
     description: 'Use Coinbase Wallet app on mobile device',
     href: null,
     color: '#315CF5',
   },
   COINBASE_LINK: {
     name: 'Open in Coinbase Wallet',
-    icon: COINBASE_ICON_URL,
+    iconURL: COINBASE_ICON_URL,
     description: 'Open in Coinbase Wallet app.',
     href: 'https://go.cb-w.com/mtUDhEZPy1',
     color: '#315CF5',
@@ -69,7 +67,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   FORTMATIC: {
     connector: fortmatic,
     name: 'Fortmatic',
-    icon: FORTMATIC_ICON_URL,
+    iconURL: FORTMATIC_ICON_URL,
     description: 'Login using Fortmatic hosted wallet',
     href: null,
     color: '#6748FF',
@@ -78,7 +76,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   Portis: {
     connector: portis,
     name: 'Portis',
-    icon: PORTIS_ICON_URL,
+    iconURL: PORTIS_ICON_URL,
     description: 'Login using Portis hosted wallet',
     href: null,
     color: '#4A6C9B',
