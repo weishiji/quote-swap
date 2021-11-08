@@ -33,10 +33,8 @@ import PendingView from './PendingView';
 
 const WALLET_VIEWS = {
   OPTIONS: 'options',
-  OPTIONS_SECONDARY: 'options_secondary',
   ACCOUNT: 'account',
   PENDING: 'pending',
-  LEGAL: 'legal',
 };
 
 interface IWalletModalProps {
@@ -52,7 +50,6 @@ const WalletModal = ({
 }: IWalletModalProps) => {
   const { active, account, connector, activate, error } = useWeb3React();
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT);
-  const previousWalletView = usePrevious(walletView);
   const [pendingWallet, setPendingWallet] = useState<AbstractConnector | undefined>();
   const [pendingError, setPendingError] = useState<boolean>();
   const walletModalOpen = useModalOpen(ApplicationModal.WALLET);
@@ -220,14 +217,19 @@ const WalletModal = ({
   };
 
   const getModalContent = () => {
-    console.log(walletView === WALLET_VIEWS.LEGAL);
     if (account && walletView === WALLET_VIEWS.ACCOUNT) {
       return (
         <>
           <ModalHeader>Account</ModalHeader>
           <ModalCloseButton right={5} top={5} />
           <ModalBody pb={4}>
-            <AccountDetails openOptions={() => setWalletView(WALLET_VIEWS.OPTIONS)} />
+            <AccountDetails
+              toggleWalletModal={toggleWalletModal}
+              pendingTransactions={pendingTransactions}
+              confirmedTransactions={confirmedTransactions}
+              ENSName={ENSName}
+              openOptions={() => setWalletView(WALLET_VIEWS.OPTIONS)}
+            />
           </ModalBody>
         </>
       );

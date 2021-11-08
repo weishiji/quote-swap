@@ -11,6 +11,8 @@ import { useActiveWeb3React } from '@/hooks/web3';
 import Identicon from '@/components/Identicon';
 import { shortenAddress } from '@/utils';
 
+import CopyHelper from './Copy';
+
 const IconWrapper = styled(Avatar)`
   background-color: transparent;
   & > img {
@@ -18,7 +20,21 @@ const IconWrapper = styled(Avatar)`
   }
 `;
 
-const AccountDetails = ({ openOptions }) => {
+interface IAccountDetailsProps {
+  toggleWalletModal: () => void;
+  pendingTransactions: string[];
+  confirmedTransactions: string[];
+  ENSName?: string;
+  openOptions: () => void;
+}
+
+const AccountDetails = ({
+  toggleWalletModal,
+  pendingTransactions,
+  confirmedTransactions,
+  ENSName,
+  openOptions,
+}: IAccountDetailsProps) => {
   const { chainId, account, connector } = useActiveWeb3React();
 
   const borderColor = useColorModeValue('blackAlpha.500', 'whiteAlpha.500');
@@ -103,12 +119,26 @@ const AccountDetails = ({ openOptions }) => {
         </HStack>
       </Flex>
       <HStack spacing={2}>
-        {getStatusIcon()}
-        {account && (
-          <Text fontSize='xl' fontWeight='medium'>
-            {shortenAddress(account)}
-          </Text>
+        {ENSName ? (
+          <>
+            {getStatusIcon()}
+            <Text fontSize='xl' fontWeight='medium'>
+              {ENSName}
+            </Text>
+          </>
+        ) : (
+          <>
+            {getStatusIcon()}
+            {account && (
+              <Text fontSize='xl' fontWeight='medium'>
+                {shortenAddress(account)}
+              </Text>
+            )}
+          </>
         )}
+      </HStack>
+      <HStack>
+        <CopyHelper toCopy={account} />
       </HStack>
     </VStack>
   );

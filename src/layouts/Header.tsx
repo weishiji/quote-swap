@@ -16,7 +16,6 @@ const Header = () => {
   const toggleWalletModal = useWalletModalToggle();
 
   const { ENSName } = useENSName(account ?? undefined);
-  console.log({ ENSName });
   return (
     <>
       <Box as='header' py={4}>
@@ -29,7 +28,9 @@ const Header = () => {
           </HStack>
         </Container>
       </Box>
-      {(contextNetwork.active || active) && <WalletModal />}
+      {(contextNetwork.active || active) && (
+        <WalletModal ENSName={ENSName} pendingTransactions={[]} confirmedTransactions={[]} />
+      )}
     </>
   );
 };
