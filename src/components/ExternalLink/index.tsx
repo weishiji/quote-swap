@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 import NextLink from 'next/link';
-import { Link, LinkProps } from '@chakra-ui/react';
+import { Button, Link, LinkProps } from '@chakra-ui/react';
 import ReactGA from 'react-ga';
 import { anonymizeLink } from '@/utils/anonymizeLink';
 
@@ -33,7 +33,7 @@ const ExternalLink = ({
 }: OmitTExternalLink) => {
   return (
     <NextLink href={href} passHref>
-      <Link target={target} rel={rel} {...rest} onClick={handleClickExternalLink} />
+      <Link target={target} rel={rel} onClick={handleClickExternalLink} {...rest} />
     </NextLink>
   );
 };

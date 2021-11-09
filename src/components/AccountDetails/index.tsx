@@ -10,8 +10,11 @@ import { SUPPORTED_WALLETS } from '@/constants/wallet';
 import { useActiveWeb3React } from '@/hooks/web3';
 import Identicon from '@/components/Identicon';
 import { shortenAddress } from '@/utils';
+import { ExplorerDataType, getExplorerLink } from '@/utils/getExplorerLink';
+import { BiLinkExternal } from 'react-icons/bi';
 
 import CopyHelper from './Copy';
+import ExternalLink from '../ExternalLink';
 
 const IconWrapper = styled(Avatar)`
   background-color: transparent;
@@ -138,7 +141,23 @@ const AccountDetails = ({
         )}
       </HStack>
       <HStack>
-        <CopyHelper toCopy={account} />
+        {account && <CopyHelper toCopy={account} />}
+        {account && chainId && (
+          <ExternalLink
+            display='flex'
+            alignItems='center'
+            href={getExplorerLink(chainId, account, ExplorerDataType.ADDRESS)}
+            color='gray.500'
+            _hover={{
+              color: 'blue.500',
+            }}
+          >
+            <BiLinkExternal size='16' />
+            <Text as='span' ml={1} fontSize='sm' lineHeight='4'>
+              View on Explorer
+            </Text>
+          </ExternalLink>
+        )}
       </HStack>
     </VStack>
   );

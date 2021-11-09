@@ -1,12 +1,12 @@
-import { FC } from 'react';
 import { Button, HStack, Text, useClipboard } from '@chakra-ui/react';
-import { FaRegCopy, FaRegCheckCircle } from 'react-icons/fa';
+import { BiCopy } from 'react-icons/bi';
+import { FaRegCheckCircle } from 'react-icons/fa';
 
 interface ICopyHelperProps {
   toCopy: string;
 }
 
-const CopyHelper: FC<ICopyHelperProps> = ({ toCopy, children }) => {
+const CopyHelper = ({ toCopy }: ICopyHelperProps) => {
   const { hasCopied, onCopy } = useClipboard(toCopy);
   return (
     <>
@@ -20,7 +20,7 @@ const CopyHelper: FC<ICopyHelperProps> = ({ toCopy, children }) => {
           size='sm'
           cursor='pointer'
         >
-          <FaRegCopy size='16' />
+          <BiCopy size='16' />
           <Text lineHeight='4'>Copy Address</Text>
         </Button>
       ) : (
@@ -29,8 +29,6 @@ const CopyHelper: FC<ICopyHelperProps> = ({ toCopy, children }) => {
           <Text lineHeight='4'>Copied</Text>
         </Button>
       )}
-
-      {children}
     </>
   );
 };
